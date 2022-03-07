@@ -1,33 +1,49 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Welcome to Employee Wage Computation program");
-//UC3-Emp_Part_Time_Wage
-int Present = 1;
-int fulltime = 1;
-int Emp_per_rate = 20;
-int emphr = 0;
-int empwage = 0;
 
-Random random = new Random();
-Random random1 = new Random();
-int Employeestatus = random.Next(0, 2);
-int EmployeeTime = random1.Next(0, 2);
-if (Employeestatus == Present)
+//UC4-Employee_Wage_Using_Case_Statement
+
+namespace EmployeeWage
 {
-    if (EmployeeTime == fulltime)
+    class program
     {
-        Console.WriteLine("Employee is present");
-        emphr = 8;
-    }
-    else
-    {
-        Console.WriteLine("Employee is present");
-        emphr = 4;
+
+        public const int IsFullTime = 1;
+        public const int IsPartTime = 2;
+        public const int Emp_per_rate = 20;
+
+       public static void Main(String[] args)
+        {
+            int emphr = 0;
+            int empwage = 0;
+
+            Random random = new Random();
+            int empCheck = random.Next(0, 3);
+
+            switch (empCheck)
+            {
+                case IsFullTime:
+                    Console.WriteLine("Employee is FullTime present");
+                    emphr = 8;
+                    //empwage = (Emp_per_rate * emphr);
+                    //Console.WriteLine("Daily wage " + empwage);
+                    break;
+                case IsPartTime:
+                    Console.WriteLine("Employee is Part Time present");
+                    emphr = 4;
+                    //empwage = (Emp_per_rate * emphr);
+                    //Console.WriteLine("Daily wage " + empwage);
+                    break;
+                default:
+                    Console.WriteLine("Employee is absent");
+                    emphr = 0;
+                    //empwage = (Emp_per_rate * emphr);
+                    //Console.WriteLine("Daily wage " + empwage);
+                    break;
+            }
+            empwage = (Emp_per_rate * emphr);
+            Console.WriteLine("Daily wage " + empwage);
+
+        }
     }
 }
-else
-{
-    Console.WriteLine("Employee is absent");
-    emphr = 0;
-}
-empwage = (Emp_per_rate * emphr);
-Console.WriteLine("Daily wage " + empwage);
