@@ -1,7 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Welcome to Employee Wage Computation program");
 
-//UC6-Calculate_Employee_Wage_Till_Condition
+//UC7-Calculate_Employee_Wage_Using _Method
 
 namespace EmployeeWage
     {
